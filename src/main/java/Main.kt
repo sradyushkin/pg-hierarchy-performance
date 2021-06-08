@@ -1,3 +1,4 @@
 fun main() {
-    print("Hello world!")
+    val dataGenerator = DataGenerator()
+    dataGenerator.perform()
 }
