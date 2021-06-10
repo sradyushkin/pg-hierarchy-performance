@@ -17,9 +17,7 @@
             <column name="name" type="varchar(20)">
                 <constraints nullable="false"/>
             </column>
-            <column name="tree" type="ltree">
-                <constraints nullable="false"/>
-            </column>
+            <column name="tree" type="ltree"/>
         </createTable>
 
         <createTable tableName="org_structure">
@@ -29,9 +27,7 @@
             <column name="name" type="varchar(20)">
                 <constraints nullable="false"/>
             </column>
-            <column name="parent_id" type="integer">
-                <constraints nullable="false"/>
-            </column>
+            <column name="parent_id" type="integer"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
