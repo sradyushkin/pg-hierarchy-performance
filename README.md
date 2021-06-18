@@ -1,0 +1,1 @@
+This project created to compare performance between Postgres ltree extension and simple recursive query when need to work with hierarchical data.
