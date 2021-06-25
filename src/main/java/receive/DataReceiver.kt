@@ -18,7 +18,7 @@ class DataReceiver {
     private fun receiveFirstTable(connection: Connection) {
         println("Receive data from ltree table")
 
-        val query = "EXPLAIN ANALYZE SELECT count(*) FROM org_structure_tree WHERE tree ~ '*'"
+        val query = "EXPLAIN ANALYZE SELECT count(*) FROM org_structure_tree WHERE tree <@ '1'"
 
         parseExecutionTime(connection.createStatement().executeQuery(query))
     }

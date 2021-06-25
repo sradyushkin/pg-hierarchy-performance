@@ -1,6 +1,7 @@
 package generate
 
 import settings.PgConnector
+import java.lang.StringBuilder
 import java.sql.Connection
 import java.sql.Types
 import java.util.*
@@ -21,13 +22,14 @@ class DataGenerator {
         val maxNumber = getMaxNumber()
         var i: Int = 1
         val name = "name"
+        val appender = StringBuilder()
 
         val prepareStatement = connection.prepareStatement("INSERT into org_structure_tree(name, tree) VALUES (?, ?);")
 
         while (i <= maxNumber) {
-            val tree = i - 1;
+            appender.append(if (i - 1 > 0) ".$i" else i.toString())
             prepareStatement.setString(1, name + "_$i")
-            prepareStatement.setObject(2, if (tree > 0) "$i.$tree" else i.toString(), Types.OTHER)
+            prepareStatement.setObject(2, appender.toString(), Types.OTHER)
             prepareStatement.addBatch()
             i++
         }
