@@ -1,6 +1,6 @@
-package generate
+package org.sradyushkin.generate
 
-import settings.PgConnector
+import org.sradyushkin.settings.PgConnector
 import java.lang.StringBuilder
 import java.sql.Connection
 import java.sql.Types
@@ -61,7 +61,7 @@ class DataGenerator {
 
     private fun getMaxNumber(): Int {
         val prop = Properties()
-        prop.load(DataGenerator::class.java.getResourceAsStream("../$appProp"))
+        prop.load(DataGenerator::class.java.getResourceAsStream("/$appProp"))
         return Integer.parseInt(prop.getProperty("max.row.number"))
     }
 }

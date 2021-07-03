@@ -1,6 +1,6 @@
-package settings
+package org.sradyushkin.settings
 
-import generate.DataGenerator
+import org.sradyushkin.generate.DataGenerator
 import java.sql.Connection
 import java.sql.DriverManager
 import java.util.*
@@ -19,7 +19,7 @@ class PgConnector {
 
     private fun getPropertyByKey(key: String): String {
         val prop = Properties()
-        prop.load(DataGenerator::class.java.getResourceAsStream("../$dbProp"))
+        prop.load(DataGenerator::class.java.getResourceAsStream("/$dbProp"))
         return prop.getProperty(key)
     }
 }

@@ -1,6 +1,6 @@
-package receive
+package org.sradyushkin.receive
 
-import settings.PgConnector
+import org.sradyushkin.settings.PgConnector
 import java.sql.Connection
 import java.sql.ResultSet
 

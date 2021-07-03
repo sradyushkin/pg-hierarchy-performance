@@ -1,5 +1,5 @@
-import generate.DataGenerator
-import receive.DataReceiver
+import org.sradyushkin.generate.DataGenerator
+import org.sradyushkin.receive.DataReceiver
 
 fun main() {
     val dataGenerator = DataGenerator()
